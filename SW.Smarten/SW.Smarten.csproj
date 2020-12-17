@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>SimplyWorks.Smarten</PackageId>
+    <Authors>Simplify9</Authors>
+    <Product>SimplyWorks.Smarten</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/simplify9/Smarten</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/simplify9/Smarten</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
@@ -10,6 +17,13 @@
     <PackageReference Include="Marten" Version="3.13.3" />
     <PackageReference Include="SimplyWorks.PrimitiveTypes" Version="2.0.104" />
     
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>  
 
 </Project>
