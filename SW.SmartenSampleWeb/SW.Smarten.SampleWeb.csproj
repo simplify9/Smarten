@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SW.Smarten\SW.Smarten.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
+        <PackageReference Include="SimplyWorks.HttpExtensions" Version="2.0.42" />
+
+  </ItemGroup>
+
+</Project>
