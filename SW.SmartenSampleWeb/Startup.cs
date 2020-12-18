@@ -33,7 +33,7 @@ namespace SW.Smarten.SampleWeb
                 configure.MaintenanceDatabase = "defaultdb";
                 configure.DatabaseSchema = "smarten";
 
-                configure.AddEntity<TraceType, string, TraceTypeTranslations, TraceTypeInfo>("tracetypes");
+                configure.AddEntity<TraceType, string, TraceTypeTranslations, TraceTypeInfo>("traces");
                 configure.AddEntity<User, int>("users");
             });
 

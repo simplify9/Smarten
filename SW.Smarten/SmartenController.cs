@@ -36,6 +36,9 @@ namespace SW.Smarten
         async public Task<IActionResult> GetById([FromRoute] string key)
         {
             var result = await ResolveEntityAdapter(EntityUrl).GetById(key); 
+            if (result == null)
+                return NotFound(key);
+
             return Ok(result);
         }
 

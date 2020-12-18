@@ -29,7 +29,7 @@ namespace SW.Smarten
 
                 //var defaultLanguage = multiLingualMapContext.SettingManager
                 //                                            .GetSettingValue(LocalizationSettingNames.DefaultLanguage);
-                if (!context.Items.TryGetValue("local", out var locale))
+                if (!context.Items.TryGetValue("locale", out var locale))
                 {
                     locale = CultureInfo.CurrentCulture.Name;
                 }
