@@ -10,7 +10,7 @@
   
   <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
-        <PackageReference Include="SimplyWorks.HttpExtensions" Version="2.0.42" />
+        <PackageReference Include="SimplyWorks.HttpExtensions" Version="2.0.43" />
 
   </ItemGroup>
 
