@@ -41,7 +41,7 @@ namespace SW.Smarten
                 throw new NotImplementedException();
         }
 
-        async public virtual Task<object> Search(string search)
+        async public virtual Task<object> Search(string search, bool raw)
         {
             return await querySession.Query<TEntity>().ToListAsync();
         }
@@ -69,9 +69,13 @@ namespace SW.Smarten
                     configure.CreateMultiLingualMap<TEntity, TTranslation, TModel>());
         }
 
-        async public override Task<object> Search(string search)
+        async public override Task<object> Search(string search, bool raw)
         {
-            var entities = (IEnumerable<TEntity>)await base.Search(search);
+            var entities = (IEnumerable<TEntity>)await base.Search(search, raw);
+
+            if (raw) 
+                return entities;
+
             var mapper = mapperConfig.CreateMapper();
             var result = entities.Select(i => mapper.Map<TModel>(i, options =>
             {

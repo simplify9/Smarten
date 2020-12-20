@@ -26,16 +26,16 @@ namespace SW.Smarten
         }
 
         [HttpGet]
-        async public Task<IActionResult> Search()
+        async public Task<IActionResult> Search([FromQuery] bool raw, [FromQuery] string search)
         {
-            var result = await ResolveEntityAdapter(EntityUrl).Search(""); 
+            var result = await ResolveEntityAdapter(EntityUrl).Search(search, raw);
             return Ok(result);
         }
 
         [HttpGet("{key}")]
         async public Task<IActionResult> GetById([FromRoute] string key)
         {
-            var result = await ResolveEntityAdapter(EntityUrl).GetById(key); 
+            var result = await ResolveEntityAdapter(EntityUrl).GetById(key);
             if (result == null)
                 return NotFound(key);
 
@@ -45,7 +45,7 @@ namespace SW.Smarten
         [HttpPost]
         async public Task<IActionResult> BulkSave([FromBody] object bulkData)
         {
-            await ResolveEntityAdapter(EntityUrl).BulkSave(bulkData.ToString()); 
+            await ResolveEntityAdapter(EntityUrl).BulkSave(bulkData.ToString());
             return Ok();
         }
 
